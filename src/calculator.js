@@ -1,6 +1,10 @@
 function add(number)
 {
-    return 0;
+	if(number == ""){
+    	return 0;
+	}
+	return parseInt(number);
+
 }
 
 module.exports = add;
