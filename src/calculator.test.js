@@ -47,3 +47,8 @@ it("should ignore numbers bigger than 1000" , () =>
 {
     expect(add("1,1001,1000")).toBe(1001);
 });
+
+it("should ignore numbers bigger than 1000 if there is only one number" , () =>
+{
+    expect(add("1001")).toBe(0);
+});

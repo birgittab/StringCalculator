@@ -1,7 +1,7 @@
 function add(numbers)
 {
 
-	if(numbers == ""){
+	if(numbers == "" || numbers > 1000){
     	return 0;
 	}
 
@@ -13,6 +13,7 @@ function add(numbers)
 
     else
     {
+
     	if(numbers < 0)
     	{
     		throw "Negative numbers are not allowed: " + numbers;
