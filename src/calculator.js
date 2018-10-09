@@ -3,6 +3,11 @@ function add(numbers)
 	if(numbers == ""){
     	return 0;
 	}
+
+	if(numbers.includes("-"))
+	{
+		throw "Negative numbers are not allowed";
+	}
   	
   	if(numbers.includes(",") || numbers.includes("\n"))
     {
@@ -31,7 +36,7 @@ function sum(numberArray)
 	var total = 0;
     for(var i = 0; i < numberArray.length; i++)
     {
-      	total += parseInt(numberArray[i]);
+       	total += parseInt(numberArray[i]);
     }
     return total;
 }
