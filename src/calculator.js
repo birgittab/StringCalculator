@@ -6,8 +6,7 @@ function add(numbers)
   	
   	if(numbers.includes(",") || numbers.includes("\n"))
     {
-    	numbers = numbers.replace(/\n/g,",");
-        var numberArray = numbers.split(",");
+        var numberArray = createArray(numbers);
         return sum(numberArray);
     }
 
@@ -15,6 +14,16 @@ function add(numbers)
     {
         return parseInt(numbers);
  	}
+}
+
+function createArray(numbers)
+{
+	if(numbers.includes(",") || numbers.includes("\n"))
+    {
+    	numbers = numbers.replace(/\n/g,",");
+        var numberArray = numbers.split(",");
+        return numberArray;
+    }
 }
 
 function sum(numberArray)
@@ -27,7 +36,4 @@ function sum(numberArray)
     return total;
 }
 
-
 module.exports = add;
-
-//add(5,4);
