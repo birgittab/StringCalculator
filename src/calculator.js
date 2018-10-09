@@ -1,23 +1,31 @@
-function add(number)
+function add(numbers)
 {
-	if(number == ""){
+	if(numbers == ""){
     	return 0;
 	}
   	
-  	if(number.includes(","))
+  	if(numbers.includes(","))
     {
-        var numberArray = number.split(",");
-        var total = 0;
-        for(var i = 0; i < numberArray.length; i++)
-        {
-        	total += parseInt(numberArray[i]);
-    	}
-    	return total;
+        var numberArray = numbers.split(",");
+        return sum(numberArray);
+        
     }
+    
     else
     {
-        return parseInt(number);
-    }
+        return parseInt(numbers);
+ 	}
 }
+
+function sum(numberArray)
+{
+	var total = 0;
+    for(var i = 0; i < numberArray.length; i++)
+    {
+      	total += parseInt(numberArray[i]);
+    }
+    return total;
+}
+
 
 module.exports = add;
