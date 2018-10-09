@@ -10,7 +10,13 @@ function add(numbers)
         return sum(numberArray);
         
     }
-    
+
+    if(numbers.includes("\n"))
+    {
+    	var numberArray = numbers.split("\n");
+    	return sum(numberArray);
+    }
+
     else
     {
         return parseInt(numbers);
@@ -29,3 +35,5 @@ function sum(numberArray)
 
 
 module.exports = add;
+
+//add(5,4);

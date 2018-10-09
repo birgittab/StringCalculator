@@ -19,3 +19,9 @@ it("should sumarize multiple numbers", () =>
 {
     expect(add("1,2,3,4")).toBe(10);
 });
+
+
+it("should handle numbers being split by newline", () =>
+{
+    expect(add("1\n2")).toBe(3);
+});
