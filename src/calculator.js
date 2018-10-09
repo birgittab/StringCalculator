@@ -29,24 +29,27 @@ function createArray(numbers)
     }
     
     var numberArray = numbers.split(",");
-    var negNumArray = [];
+    
   
+	checkNegativity(numberArray);
+    return numberArray;
+    
+}
 
-    for(var i = 0; i < numberArray.length; i++)
+function checkNegativity(numberArray)
+{
+	var negNumArray = [];
+	for(var i = 0; i < numberArray.length; i++)
     {
         if(parseInt(numberArray[i]) < 0){
         	negNumArray.push(numberArray[i]);    	
         }
-
     }
  
     if(negNumArray.length > 0)
     {
       	throw "Negative numbers are not allowed: " + negNumArray.join(",");
     }
-
-    return numberArray;
-    
 }
 
 function sum(numberArray)
@@ -58,7 +61,5 @@ function sum(numberArray)
     }
     return total;
 }
-
-
 
 module.exports = add;
