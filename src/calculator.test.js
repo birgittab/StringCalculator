@@ -42,3 +42,8 @@ it("should throw Negative numbers are not allowed exception when input includes 
          add("-1,-2,-3");
     }).toThrow("Negative numbers are not allowed: -1,-2,-3");
 });
+
+it("should ignore numbers bigger than 1000" , () =>
+{
+    expect(add("1,1001,1000")).toBe(1001);
+});

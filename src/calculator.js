@@ -28,9 +28,16 @@ function createArray(numbers)
     	numbers = numbers.replace(/\n/g,",");
     }
     
-    var numberArray = numbers.split(",");
-    
-  
+    var tmpNumberArray = numbers.split(",");
+    var numberArray = [];
+
+   	for(var i = 0; i < tmpNumberArray.length; i++)
+    {
+        if(parseInt(tmpNumberArray[i]) <= 1000){
+        	numberArray.push(tmpNumberArray[i]);
+        }	
+    }
+
 	checkNegativity(numberArray);
     return numberArray;
     
