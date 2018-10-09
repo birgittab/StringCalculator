@@ -23,12 +23,14 @@ function add(numbers)
 
 function createArray(numbers)
 {
-	if(numbers.includes(",") || numbers.includes("\n"))
+	if(numbers.includes("\n"))
     {
     	numbers = numbers.replace(/\n/g,",");
-        var numberArray = numbers.split(",");
-        return numberArray;
     }
+    
+    var numberArray = numbers.split(",");
+    return numberArray;
+    
 }
 
 function sum(numberArray)
