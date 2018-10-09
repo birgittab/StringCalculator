@@ -28,7 +28,15 @@ function createArray(numbers)
     	numbers = numbers.replace(/\n/g,",");
     }
     
-    var tmpNumberArray = numbers.split(",");
+    var numberArray = ignoreBig(numbers);
+	checkNegativity(numberArray);
+    return numberArray;
+    
+}
+
+function ignoreBig(numbers)
+{
+	var tmpNumberArray = numbers.split(",");
     var numberArray = [];
 
    	for(var i = 0; i < tmpNumberArray.length; i++)
@@ -37,10 +45,7 @@ function createArray(numbers)
         	numberArray.push(tmpNumberArray[i]);
         }	
     }
-
-	checkNegativity(numberArray);
     return numberArray;
-    
 }
 
 function checkNegativity(numberArray)
