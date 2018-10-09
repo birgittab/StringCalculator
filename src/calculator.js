@@ -4,17 +4,11 @@ function add(numbers)
     	return 0;
 	}
   	
-  	if(numbers.includes(","))
+  	if(numbers.includes(",") || numbers.includes("\n"))
     {
+    	numbers = numbers.replace(/\n/g,",");
         var numberArray = numbers.split(",");
         return sum(numberArray);
-        
-    }
-
-    if(numbers.includes("\n"))
-    {
-    	var numberArray = numbers.split("\n");
-    	return sum(numberArray);
     }
 
     else
