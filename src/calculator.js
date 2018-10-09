@@ -4,10 +4,10 @@ function add(numbers)
     	return 0;
 	}
 
-	if(numbers.includes("-"))
+	/*if(numbers.includes("-"))
 	{
 		throw "Negative numbers are not allowed";
-	}
+	}*/
   	
   	if(numbers.includes(",") || numbers.includes("\n"))
     {
@@ -17,6 +17,10 @@ function add(numbers)
 
     else
     {
+    	if(numbers < 0)
+    	{
+    		throw "Negative numbers are not allowed"
+    	}
         return parseInt(numbers);
  	}
 }
@@ -29,6 +33,14 @@ function createArray(numbers)
     }
     
     var numberArray = numbers.split(",");
+
+    for(var i = 0; i < numberArray.length; i++)
+    {
+        if(numberArray[i] < 0){
+        	console.log("true");
+        	throw "Negative numbers are not allowed"
+        }
+    }
     return numberArray;
     
 }
