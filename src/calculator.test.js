@@ -57,3 +57,8 @@ it("should handle different delimeters" , () =>
 {
     expect(add("//;\n1;2")).toBe(3);
 });
+
+it("should handle different delimeters with \n and ," , () =>
+{
+    expect(add("//;\n1;2\n1,1")).toBe(5);
+});
