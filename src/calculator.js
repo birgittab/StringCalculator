@@ -1,19 +1,30 @@
 function add(numbers)
 {
-
 	if(numbers == "" || numbers > 1000){
     	return 0;
 	}
 
+    var prefix = numbers.substring(0,2);
+    if(prefix == "//")
+    {
+        var split = numbers.substr(0,numbers.indexOf("\n"));
+        var split2 = numbers.substr(numbers.indexOf('\n')+1);
+
+        var parameter = split.substring(2);
+        console.log("parameters: " + parameter);
+
+        var numbers = split2; 
+        numbers = numbers.replace(parameter,",");
+        console.log("numbers" + numbers);
+    }
+  
   	if(numbers.includes(",") || numbers.includes("\n"))
     {
         var numberArray = createArray(numbers);
         return sum(numberArray);
     }
-
     else
     {
-
     	if(numbers < 0)
     	{
     		throw "Negative numbers are not allowed: " + numbers;

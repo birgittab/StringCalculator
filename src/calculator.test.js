@@ -52,3 +52,8 @@ it("should ignore numbers bigger than 1000 if there is only one number" , () =>
 {
     expect(add("1001")).toBe(0);
 });
+
+it("should handle different delimeters" , () =>
+{
+    expect(add("//;\n1;2")).toBe(3);
+});
