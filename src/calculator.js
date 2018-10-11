@@ -7,15 +7,7 @@ function add(numbers)
     var prefix = numbers.substring(0,2);
     if(prefix == "//")
     {
-        var split = numbers.substr(0,numbers.indexOf("\n"));
-        var split2 = numbers.substr(numbers.indexOf('\n')+1);
-
-        var parameter = split.substring(2);
-        console.log("parameters: " + parameter);
-
-        var numbers = split2; 
-        numbers = numbers.replace(parameter,",");
-        console.log("numbers" + numbers);
+       numbers = checkParameter(numbers);
     }
   
   	if(numbers.includes(",") || numbers.includes("\n"))
@@ -31,6 +23,15 @@ function add(numbers)
     	}
         return parseInt(numbers);
  	}
+}
+
+function checkParameter(numbers){
+
+        var parameter = numbers.substr(0,numbers.indexOf("\n")).substring(2);
+    
+        numbers = numbers.substr(numbers.indexOf('\n')+1);       
+        numbers = numbers.replace(parameter,",");
+        return numbers;
 }
 
 function createArray(numbers)
